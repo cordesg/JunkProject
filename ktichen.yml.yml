@@ -1,5 +1,5 @@
 driver:
-    name: vagrant
+    name: vagrant1
 
 provisioner:
     name: chef_solo
