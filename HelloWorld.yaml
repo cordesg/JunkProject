@@ -1,0 +1,20 @@
+---
+- name: This is a Junk Project
+  hosts: junk
+  tasks:
+  - name: junkCompile 
+    command: mvn -f '/Users/macpc/Google Drive/projectFiles/jenkins/junk/pom.xml' clean package
+    delegate_to: 127.0.0.1
+
+  - name: stopTomcat
+    command: /opt/tomcat/bin/shutdown.sh
+    
+  - name: junkDeploy
+    copy:
+      src: '/Users/macpc/Google Drive/NetBeansProjects/JunkWeb/junk/target/junk-0.0.1-SNAPSHOT.war'
+      dest: /opt/tomcat/webapps/junk.war
+      owner: ubuntu
+
+  - name: startTomcat
+    command: nohup '/opt/tomcat/bin/startup.sh'
+      
