@@ -3,7 +3,7 @@
   hosts: junk
   tasks:
   - name: junkCompile 
-    command: mvn -f '/Users/macpc/Google Drive/projectFiles/jenkins/junk/pom.xml' clean package
+    command: mvn -f './pom.xml' clean package
     delegate_to: 127.0.0.1
 
   - name: stopTomcat
