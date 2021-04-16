@@ -11,7 +11,7 @@
     
   - name: junkDeploy
     copy:
-      src: './JunkWeb/junk/target/junk-0.0.1-SNAPSHOT.war'
+      src: './target/junk-0.0.1-SNAPSHOT.war'
       dest: /opt/tomcat/webapps/junk.war
       owner: ubuntu
 
